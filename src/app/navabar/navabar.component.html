@@ -1,38 +1,38 @@
 <div class="flex flex-row justify-center items-center w-full">
-  <div class="flex justify-between gap-7 transition-all duration-500">
-    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full" *ngFor="let item of items; let i = index" [ngClass]="{'bg-sky-500 w-16': activeIndex === i}" 
+  <div class="flex justify-between gap-7 transition-all">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full hover:text-white duration-500" *ngFor="let item of items; let i = index" [ngClass]="{'bg-sky-500 w-16': activeIndex === i}" 
       (click)="setActive(i)">
-      <section>
+    
         <mat-icon
-          ><span class="material-symbols-outlined text-gray-500">
+          ><span class="material-symbols-outlined text-gray-500 ">
             {{item.icon}}
             </span></mat-icon
         >
         <p>{{item.label}}</p>
         
-      </section>
+      
     </button>
-    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full hover:text-white duration-500">
       <section>
         <mat-icon>
-          <span class="material-symbols-outlined text-gray-500">
+          <span class="material-symbols-outlined text-gray-500 ">
             ramen_dining
             </span>
         </mat-icon>
-        <p>Noodles</p>
+        <p >Noodles</p>
       </section>
     </button>
-    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full hover:text-white duration-500">
       <section>
         <mat-icon>
           <span class="material-symbols-outlined text-gray-500">
             local_pizza
             </span>
         </mat-icon>
-        <p>Pizza</p>
+        <p >Pizza</p>
       </section>
     </button>
-    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full hover:text-white duration-500">
       <section>
         <mat-icon>
           <span class="material-symbols-outlined text-gray-500">
@@ -42,7 +42,7 @@
         <p>Rice</p>
       </section>
     </button>
-    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full hover:text-white duration-500">
       <section>
         <mat-icon>
           <span class="material-symbols-outline text-gray-500 ">
