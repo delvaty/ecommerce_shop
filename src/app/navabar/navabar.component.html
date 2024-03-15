@@ -1,0 +1,57 @@
+<div class="flex flex-row justify-center items-center">
+  <div class="flex gap-8 justify-between transition-all duration-300">
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full" *ngFor="let item of items; let i = index" [ngClass]="{'bg-sky-500 w-16': activeIndex === i}" 
+      (click)="setActive(i)">
+      <section>
+        <mat-icon
+          ><span class="material-symbols-outlined">
+            {{item.icon}}
+          </span></mat-icon
+        >
+        <p>{{item.label}}</p>
+        
+      </section>
+    </button>
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+      <section>
+        <mat-icon>
+          <span class="material-symbols-outlined">
+            ramen_dining
+            </span>
+        </mat-icon>
+        <p>Noodles</p>
+      </section>
+    </button>
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+      <section>
+        <mat-icon>
+          <span class="material-symbols-outlined">
+            local_pizza
+            </span>
+        </mat-icon>
+        <p>Pizza</p>
+      </section>
+    </button>
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+      <section>
+        <mat-icon>
+          <span class="material-symbols-outlined">
+            rice_bowl
+            </span>
+        </mat-icon>
+        <p>Rice</p>
+      </section>
+    </button>
+    <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
+      <section>
+        <mat-icon>
+          <span class="material-symbols-outlined">
+            local_drink
+            </span>
+        </mat-icon>
+        <p>Drink</p>
+      </section>
+    </button>
+    
+  </div>
+</div>
