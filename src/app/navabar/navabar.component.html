@@ -1,5 +1,5 @@
-<div class="flex flex-row justify-center items-center">
-  <div class="flex gap-8 justify-between transition-all duration-300">
+<div class="flex flex-row justify-center items-center w-full">
+  <div class="flex justify-between gap-7 transition-all duration-500">
     <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full" *ngFor="let item of items; let i = index" [ngClass]="{'bg-sky-500 w-16': activeIndex === i}" 
       (click)="setActive(i)">
       <section>
@@ -45,7 +45,7 @@
     <button class="hover:bg-sky-500 hover:w-16 h-24 rounded-full">
       <section>
         <mat-icon>
-          <span class="material-symbols-outline text-gray-500 font-medium">
+          <span class="material-symbols-outline text-gray-500 ">
             local_drink
             </span>
         </mat-icon>
