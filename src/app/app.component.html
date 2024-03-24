@@ -1,18 +1,65 @@
-<div class="flex flex-row items-center mx-3 justify-between">
-  <p class="text-3xl font-sans">Choose anything <br/> you want!</p>
-  <button class="h-14 w-14 m-2 bg-white content-center flex rounded-full ">
-    <mat-icon class="text-black rounded-2xl m-auto h-6">
-      <span class="material-symbols-outlined">
-        search
-        </span>
-    </mat-icon>
-  </button>
-</div>
 
 
-<app-navabar></app-navabar>
-<app-title/>
+<section>
+  <div class="text-white py-20">
+    <div class="container mx-auto flex justify-center items-center md:flex-row my-6 md:my-24">
+      
+      <div class="flex flex-col w-full lg:w-2/3 justify-center">
+        <div class="container w-full px-4">
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full lg:w-6/12 px-4">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white"
+              >
+                <div class="flex-auto p-5 lg:p-10">
+                  <h4 class="text-2xl mb-4 text-black font-semibold">
+                    Escriba su tarea
+                  </h4>
+
+                  <div class="relative w-full mb-3">
+                    <ul>
+                      @for (task of tasksList; track $index) {
+                      <li class="text-black flex gap-2 py-1">
+                        {{ task }}
+                        <button
+                          class="bg-yellow-300 font-semibold rounded-lg h-[20px] w-[80px]"
+                          (click)="deleteTask($index)"
+                        >
+                          Eliminar
+                        </button>
+                      </li>
+                      }
+                      <input
+                        type="text"
+                        name="text"
+                        id="text"
+                        class="border-0 px-3 py-3 rounded text-sm shadow w-full bg-gray-200  placeholder-black text-black outline-none focus:bg-gray-400"
+                        placeholder=" "
+                        [(ngModel)]="newTask"
+                        style="transition: all 0.15s ease 0s"
+                        required
+                      />
+                    </ul>
+                  </div>
+
+                  <div class="text-center mt-6">
+                    <button
+                      id="feedbackBtn"
+                      class="bg-yellow-300 text-black text-center mx-auto active:bg-yellow-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                      style="transition: all 0.15s ease 0s"
+                      (click)="addTask()"
+                    >
+                      Agregar tarea
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-
-<router-outlet />

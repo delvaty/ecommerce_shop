@@ -1,28 +1,43 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { TitleComponent } from './title/title.component';
-import { NavabarComponent } from './navabar/navabar.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { FoodComponent } from './food/food.component';
-import { CookingPot, File, Home, LucideAngularModule, Menu, UserCheck } from 'lucide-angular';
+import { TareasService } from './services/tareas.service';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, TitleComponent, NavabarComponent, MatToolbarModule, MatIconModule, FoodComponent
+    RouterOutlet,
+    CommonModule,
+    FormsModule
+    
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'ecommerce_shop';
+export class AppComponent implements OnInit {
+  
+  tasksList: string[]=[]
+  newTask: string= ""
 
-  navItems = [
-    { label: 'Burger', icon: 'lunch_dining' },
-    { label: 'Pizza', icon: 'person' },
-    { label: 'Configuración', icon: 'settings' }
-  ];
+  private _tasksService= inject(TareasService)
+
+  ngOnInit(): void {
+    this.tasksList= this._tasksService.getTasks()
+  }
+
+  addTask(){
+    this._tasksService.addTask(this.newTask)
+    this.newTask= ""
+    this.tasksList= this._tasksService.getTasks()
+  }
+
+  deleteTask(index: number){
+    this._tasksService.deleteTask(index)
+    this.tasksList= this._tasksService.getTasks()
+  }
+
 }
